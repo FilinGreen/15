@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package Protobuf;
+
+message Edge{
+	uint32 from = 1;
+	uint32 to = 2;
+	double weight = 3;
+}
+
+message GraphEdges{
+	repeated Edge edges = 1;
+}

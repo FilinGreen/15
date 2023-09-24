@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package Protobuf;
+
+import "map_renderer.proto";
+import "graph.proto";
+import "transport_router.proto";
+
+message Stop{
+    string name = 1;
+    double x = 2;
+    double y = 3;
+    uint64 stop_id = 4;
+} 
+
+message Bus{
+    string name = 1;
+    bool circle = 2;
+    int32 bus_wait_time = 3;
+    double bus_velocity = 4;
+    repeated uint32 route = 5;
+}
+
+message Distance{
+     uint64 from_id = 1;
+     uint64 to_id = 2;
+     double distance = 3;
+}
+
+message TransportData{
+    repeated Bus buses = 1;
+    repeated Stop stops = 2; 
+    repeated Distance distances = 3;
+}
+
+message All_data{
+    TransportData transport_catalogue = 1;
+    RenderSettings render_settings = 2;
+    GraphEdges graph_edges = 3; 
+    RouterSettings router_settings = 4;
+}

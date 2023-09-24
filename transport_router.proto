@@ -1,0 +1,8 @@
+syntax="proto3";
+
+package Protobuf;
+
+message RouterSettings{
+	int32 bus_wait_tima = 1;
+	double bus_velocity = 2;
+}
